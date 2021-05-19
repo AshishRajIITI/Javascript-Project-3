@@ -130,7 +130,7 @@ src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3
 </audio>
      
  <script > 
-  var isplaying=false;
+var isplaying=false;
 var score=0;
 var lifeleft;
 var action;
@@ -146,12 +146,13 @@ $("#start").click(function(){
     }
     else{
        isplaying=true;        
-       $("#lifeleft").show();    
+        
        $("#start").html("Reset !");
        
        $("#score").html("Score : " + score);
         
-       lifeleft=3;       
+       lifeleft=3;
+       $("#lifeleft").show();  
        appendheart();       
        addfruits();
     }   
@@ -189,7 +190,7 @@ step = 1+Math.round(5*Math.random());
 
 action=setInterval(function(){
 
-$("#fruit1").css('top' ,            $("#fruit1").position().top + step);    
+$("#fruit1").css('top': $("#fruit1").position().top + step);    
     
 if($("#fruit1").position().top > 300){
        
@@ -198,8 +199,7 @@ if($("#fruit1").position().top > 300){
             $("#fruit1").show();
             choosefruit();
             
-             $("#fruit1").css({'top' : -70, 'left':  Math.round(430*Math.random()) 
-             });
+             $("#fruit1").css({'top' : -70, 'left':  Math.round(430*Math.random())});
               
             lifeleft--;
             appendheart();
